@@ -18,10 +18,10 @@ else
 	## if you pass --base flag it will install/reinstall postgres data 
 	if [ $1 == --base ]
                 then
-			ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml 2>/dev/null
+			ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml stop-deploy-server.sh start-deploy-server.sh 2>/dev/null
                         tar xzf pgdata.tar.gz
                 fi	
-        ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml 2>/dev/null
+        ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml stop-deploy-server.sh start-deploy-server.sh 2>/dev/null
 	./start-deploy-server.sh 
 fi
 
