@@ -6,9 +6,11 @@ stop -deploy-server.sh
 ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml
 
 ## if deploy-vault.pass is empty or if content is not good EXIT
-deploypass=$(md5 deploy-vault.pass)
+deploypass=$(cat deploy-vault.pass)
 
-if [ $deploypass ==  68b329da9893e34099c7d8ad5cb9c940]
+echo "key is $deploypass"
+
+if [ $deploypass == x]
 	then
 		echo "You don't have a valid licence"
 else
