@@ -13,6 +13,7 @@ echo "key is $deploypass"
 if [ $deploypass == x ]
 	then
 		echo "You don't have a valid licence"
+		exit
 else
 	## if you pass --base flag it will install/reinstall postgres data 
 	if [ $1 == --base ]
