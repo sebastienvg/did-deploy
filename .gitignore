@@ -1,0 +1,5 @@
+# ignore initial deploy code
+did-deploy-repo
+awx_projects
+ansible-vault.pass
+pgdata.old
