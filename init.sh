@@ -10,7 +10,7 @@ deploypass=$(cat deploy-vault.pass)
 
 echo "key is $deploypass"
 
-if [ $deploypass == x]
+if [ $deploypass == x ]
 	then
 		echo "You don't have a valid licence"
 else
@@ -25,7 +25,7 @@ else
 fi
 
 ## if you want to start without data reset
-if [ $1 == --start]
+if [ $1 == --start ]
 	then
 		./start-deploy-server.sh
 fi
