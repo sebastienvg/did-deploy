@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ## stop the containers if they are already running
-./stop-deploy-server.sh
+./stop-deploy-server.sh	2>/dev/null
 ## decrypt files
-ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml
+ansible-vault decrypt --vault-password-file=deploy-vault.pass pgdata.tar.gz docker-compose.yml 2>/dev/null
 
 ## if deploy-vault.pass is empty or if content is not good EXIT
 deploypass=$(cat deploy-vault.pass)
