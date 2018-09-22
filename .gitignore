@@ -3,3 +3,4 @@ did-deploy-repo
 awx_projects
 ansible-vault.pass
 pgdata.old
+pgdata
