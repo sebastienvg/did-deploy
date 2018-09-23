@@ -15,6 +15,10 @@ then
 		echo "pgdata decrypted"
 			ansible-vault decrypt --vault-password-file=deploy-vault.pass docker-compose.yml  2>/dev/null
 		echo "compose file decrypted"
+			ansible-vault decrypt --vault-password-file=deploy-vault.pass id_rsa  2>/dev/null
+                echo "id_rsa decrypted"
+			ansible-vault decrypt --vault-password-file=deploy-vault.pass id_rsa.pub  2>/dev/null
+                echo "id_rsa.pub decrypted"
 			#ansible-vault decrypt --vault-password-file=deploy-vault.pass stop-deploy-server.sh  2>/dev/null
 			ansible-vault decrypt --vault-password-file=deploy-vault.pass start-deploy-server.sh 2>/dev/null
 		echo "unpacking"
